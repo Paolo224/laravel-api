@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Exists;
 
@@ -20,7 +21,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        //dd($projects);
+        //dd(Auth::user()->roles);
         return view('admin.indexProjects', compact('projects'));
     }
 
